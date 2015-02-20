@@ -8,7 +8,7 @@ import os
 def main():
     projectName = sys.argv[1]
     projectGroup = sys.argv[2]    
-    generationFolderDest = '..'+ os.sep + '..' + os.sep + '..' + os.sep + 'target'    
+    generationFolderDest = '..'+ os.sep + '..' + os.sep + '..' + os.sep + 'generated-app'    
 
     project = Project(projectName, projectGroup)
     
