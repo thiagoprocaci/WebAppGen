@@ -19,6 +19,14 @@ class Structure:
     testResourceFolder = None
     mainResourceMetaInfFolder = None
     mainResourceSpringFolder = None
+    serviceMainFolder = None
+    serviceTestFolder = None
+    presentationMainFolder = None
+    presentationTestFolder = None
+    modelMainFolder = None
+    modelTestFolder = None
+    persistenceMainFolder = None
+    persistenceTestFolder = None
 
     def __init__(self, project, generationFolderDest):
         self.project = project
@@ -37,6 +45,14 @@ class Structure:
         self.testResourceFolder = None
         self.mainResourceMetaInfFolder = None
         self.mainResourceSpringFolder = None
+        self.serviceMainFolder = None
+        self.serviceTestFolder = None
+        self.presentationMainFolder = None
+        self.presentationTestFolder = None
+        self.modelMainFolder = None
+        self.modelTestFolder = None
+        self.persistenceMainFolder = None
+        self.persistenceTestFolder = None
 
 
     def generate(self):
@@ -48,6 +64,7 @@ class Structure:
         self.generateLogback()
         self.generateSpring()
         self.generateTomcatContext()
+        #self.generateJavaExample()
 
 
     def genenateFile(self, templateFileName, fileName, destFolder):
@@ -58,6 +75,10 @@ class Structure:
 
         filePath = destFolder + os.sep + fileName         
         FileHandler.writeContent(fileApp, filePath)
+
+    def generateJavaExample(self):
+        self.genenateFile('CustomerTemplate.java', 'Customer.java', self.modelMainFolder) 
+
 
     def generateTomcatContext(self):
         self.genenateFile('contextTemplate.xml', 'context.xml', self.mainMetaInfFolder)       
@@ -110,12 +131,14 @@ class Structure:
             currentMainPackage = FileHandler.createFolder(currentMainPackage, packageName)        
             currentTestPackage = FileHandler.createFolder(currentTestPackage, packageName)   
 
-        FileHandler.createFolder(currentMainPackage, 'service')
-        FileHandler.createFolder(currentTestPackage, 'service')
-        FileHandler.createFolder(currentMainPackage, 'presentation')
-        FileHandler.createFolder(currentTestPackage, 'presentation')
-        FileHandler.createFolder(currentMainPackage, 'model')
-        FileHandler.createFolder(currentTestPackage, 'model')
+        self.serviceMainFolder = FileHandler.createFolder(currentMainPackage, 'service')
+        self.serviceTestFolder = FileHandler.createFolder(currentTestPackage, 'service')
+        self.presentationMainFolder = FileHandler.createFolder(currentMainPackage, 'presentation')
+        self.presentationTestFolder = FileHandler.createFolder(currentTestPackage, 'presentation')
+        self.modelMainFolder = FileHandler.createFolder(currentMainPackage, 'model')
+        self.modelTestFolder = FileHandler.createFolder(currentTestPackage, 'model')
+        self.persistenceMainFolder = FileHandler.createFolder(currentMainPackage, 'persistence')
+        self.persistenceTestFolder = FileHandler.createFolder(currentTestPackage, 'persistence')
 
 
         
