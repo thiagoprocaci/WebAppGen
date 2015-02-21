@@ -25,17 +25,19 @@
     </appender>    
 
 
-    <!--
+   
     <root>
         <level value="${severity}"/>
         <appender-ref ref="logfile"/>
-    </root> -->
+    </root> 
+
+     <!--
 
     <root>
         <level value="${severity}"/>
         <appender-ref ref="stdout"/>
     </root>
-
+    -->
 
     
 
