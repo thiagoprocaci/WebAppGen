@@ -17,9 +17,11 @@
     <spring_version>4.1.0.RELEASE</spring_version>
     <spring_data_version>1.7.2.RELEASE</spring_data_version>
     <logback_version>0.9.24</logback_version>
-    <slf4j_version>1.6.1</slf4j_version>
+    <slf4j_version>1.7.5</slf4j_version>
     <jackson_version>2.1.1</jackson_version>
     <h2_version>1.4.185</h2_version>
+    <hibernate_entity_manager_version>4.2.4.Final</hibernate_entity_manager_version>
+    <hibernate_validator_version>5.0.1.Final</hibernate_validator_version>
   </properties>  
 
 
@@ -99,11 +101,22 @@
       <version>${spring_version}</version>
       <scope>runtime</scope>
     </dependency>
-      <dependency>
+    <dependency>
         <groupId>org.springframework.data</groupId>
         <artifactId>spring-data-jpa</artifactId>
         <version>${spring_data_version}</version>
+          <exclusions>
+              <exclusion>
+                  <groupId>org.springframework</groupId>
+                  <artifactId>spring.orm</artifactId>
+              </exclusion>
+          </exclusions>
     </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-orm</artifactId>
+        <version>${spring_version}</version>
+    </dependency>    
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-core</artifactId>
@@ -157,6 +170,16 @@
         <artifactId>h2</artifactId>
         <version>${h2_version}</version>
         <scope>compile</scope>
+    </dependency>    
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>${hibernate_entity_manager_version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>${hibernate_validator_version}</version>
     </dependency>
 
 

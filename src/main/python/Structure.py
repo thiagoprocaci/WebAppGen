@@ -27,6 +27,8 @@ class Structure:
     modelTestFolder = None
     persistenceMainFolder = None
     persistenceTestFolder = None
+    viewsFolder = None
+    customerFolder = None
 
     def __init__(self, project, generationFolderDest):
         self.project = project
@@ -53,6 +55,8 @@ class Structure:
         self.modelTestFolder = None
         self.persistenceMainFolder = None
         self.persistenceTestFolder = None
+        self.viewsFolder = None
+        self.customerFolder = None
 
 
     def generate(self):
@@ -64,7 +68,7 @@ class Structure:
         self.generateLogback()
         self.generateSpring()
         self.generateTomcatContext()
-        #self.generateJavaExample()
+        self.generateJavaExample()
 
 
     def genenateFile(self, templateFileName, fileName, destFolder):
@@ -78,6 +82,9 @@ class Structure:
 
     def generateJavaExample(self):
         self.genenateFile('CustomerTemplate.java', 'Customer.java', self.modelMainFolder) 
+        self.genenateFile('CustomerControllerTemplate.java', 'CustomerController.java', self.presentationMainFolder) 
+        self.genenateFile('CustomerRepositoryTemplate.java', 'CustomerRepository.java', self.persistenceMainFolder) 
+        self.genenateFile('customerListTemplate.jsp', 'customerList.jsp', self.customerFolder) 
 
 
     def generateTomcatContext(self):
@@ -120,6 +127,8 @@ class Structure:
         self.mainWebappFolder = FileHandler.createFolder(self.mainFolder, 'webapp')
         self.mainMetaInfFolder = FileHandler.createFolder(self.mainWebappFolder, 'META-INF')
         self.mainWebInfFolder = FileHandler.createFolder(self.mainWebappFolder, 'WEB-INF')
+        self.viewsFolder = FileHandler.createFolder(self.mainWebInfFolder, 'views')
+        self.customerFolder = FileHandler.createFolder(self.viewsFolder, 'customer')
 
         self.testFolder = FileHandler.createFolder(self.srcFolder, 'test')        
         self.testJavaFolder = FileHandler.createFolder(self.testFolder, 'java')
