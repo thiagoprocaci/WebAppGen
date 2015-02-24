@@ -4,11 +4,28 @@
 
 <html>
     <head>
-        <title> </title>
+        <title> <s:message code="title" /> </title>
     </head>
     <body>
 
-    ${customerList}
+     <c:if test="${not empty customerList}">
+
+
+                <table border="1px">
+                      <tr>
+                        <th> <s:message code="firstName" /> </th>
+                        <th> <s:message code="lastName" /> </th>
+                      </tr>
+                  <c:forEach var="customer" items="${customerList}">
+                      <tr>
+
+                       <td>${customer.firstName}</td>
+                       <td>${customer.lastName}</td>
+                     </tr>
+                   </c:forEach>
+                 </table>
+        </c:if>
+
 
 
 

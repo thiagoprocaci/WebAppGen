@@ -88,6 +88,8 @@ class Structure:
         self.genenateFile('CustomerRepositoryTemplate.java', 'CustomerRepository.java', self.persistenceMainFolder) 
         self.genenateFile('customerListTemplate.jsp', 'customerList.jsp', self.customerFolder) 
         self.genenateFile('createTableTemplate.sql', 'createTable.sql', self.mainResourceSQLFolder) 
+        self.genenateFile('insertTemplate.sql', 'insert.sql', self.mainResourceSQLFolder) 
+        self.genenateFile('messagesTemplate.properties', 'messages.properties', self.mainResourceFolder) 
         
 
 

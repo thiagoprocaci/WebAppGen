@@ -42,6 +42,7 @@
 
     <jdbc:initialize-database data-source="dataSource" ignore-failures="DROPS">
         <jdbc:script location="classpath:sql\createTable.sql"/>
+        <jdbc:script location="classpath:sql\insert.sql"/>
     </jdbc:initialize-database>
 
 
@@ -63,7 +64,13 @@
 
     <jpa:repositories base-package="#GROUP_NAME#.persistence"  />
 
+    <util:list id="applicationBundleNames">
+        <value>messages</value>
+    </util:list>
 
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames" ref="applicationBundleNames"/>
+    </bean>
 
 
 
