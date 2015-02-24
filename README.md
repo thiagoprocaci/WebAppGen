@@ -19,7 +19,7 @@ Python code to generate a Java application
 * The folder generated-app will be created
 * Go to generated-app/appName
 * Execute "mvn install" on generated-app/appName
-* Execute "mvn tomcat6:run -P tomcat" on generated-app/appName to run the application
+* Execute "mvn tomcat7:run -P tomcat" on generated-app/appName to run the application
 * Go to http://localhost:8080/appName/index.jsp
 
 
