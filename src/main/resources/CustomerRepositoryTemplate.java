@@ -3,7 +3,7 @@ package #GROUP_NAME#.persistence;
 
 import java.util.List;
 
-import br.com.tbp.model.Customer;
+import #GROUP_NAME#.model.Customer;
 import org.springframework.data.repository.CrudRepository;
 
 

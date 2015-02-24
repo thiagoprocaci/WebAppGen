@@ -1,8 +1,8 @@
 package #GROUP_NAME#.presentation;
 
 
-import br.com.tbp.model.Customer;
-import br.com.tbp.persistence.CustomerRepository;
+import #GROUP_NAME#.model.Customer;
+import #GROUP_NAME#.persistence.CustomerRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InOrder;

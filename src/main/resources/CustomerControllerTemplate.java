@@ -1,8 +1,8 @@
-package br.com.tbp.presentation;
+package #GROUP_NAME#.presentation;
 
 
-import br.com.tbp.model.Customer;
-import br.com.tbp.persistence.CustomerRepository;
+import #GROUP_NAME#.model.Customer;
+import #GROUP_NAME#.persistence.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
