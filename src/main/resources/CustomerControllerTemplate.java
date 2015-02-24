@@ -62,7 +62,7 @@ public class CustomerController {
     }
 
     @RequestMapping(value = "/customerDelete", method = RequestMethod.GET )
-    public String delete(Model model, @RequestParam("id") Long id) {
+    public String delete(@RequestParam("id") Long id) {
         customerRepository.delete(id);
         return "redirect:customerList.do";
     }

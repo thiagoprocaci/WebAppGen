@@ -86,6 +86,7 @@ class Structure:
         self.genenateFile('CustomerTemplate.java', 'Customer.java', self.modelMainFolder) 
         self.genenateFile('CustomerTestTemplate.java', 'CustomerTest.java', self.modelTestFolder) 
         self.genenateFile('CustomerControllerTemplate.java', 'CustomerController.java', self.presentationMainFolder) 
+        self.genenateFile('CustomerControllerTestTemplate.java', 'CustomerControllerTest.java', self.presentationTestFolder) 
         self.genenateFile('CustomerRepositoryTemplate.java', 'CustomerRepository.java', self.persistenceMainFolder) 
         self.genenateFile('customerListTemplate.jsp', 'customerList.jsp', self.customerFolder) 
         self.genenateFile('customerCreateTemplate.jsp', 'customerCreate.jsp', self.customerFolder) 
