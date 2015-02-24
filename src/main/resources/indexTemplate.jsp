@@ -2,7 +2,7 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    
+    <meta http-equiv="refresh" content="0; url=customer/customerList.do"/>
 </head>
 <body>
 It's working!

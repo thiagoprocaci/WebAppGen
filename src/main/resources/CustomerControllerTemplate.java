@@ -19,6 +19,10 @@ public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
 
+    public void setCustomerRepository(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
+
 
     @RequestMapping(value = "/customerList", method = RequestMethod.GET)
     public String findAll(Model model) {

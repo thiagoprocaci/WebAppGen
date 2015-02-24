@@ -25,6 +25,8 @@
     <servlet_api_version>2.5</servlet_api_version>
     <jsp_api_version>2.1</jsp_api_version>
     <jstl_version>1.2</jstl_version>
+    <junit_version>4.8.2</junit_version>
+    <mockito_version>1.9.5-rc1</mockito_version>
   </properties>  
 
 
@@ -38,6 +40,18 @@
 
 
   <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit_version}</version>
+      <scope>test</scope>
+    </dependency>
+     <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>${mockito_version}</version>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
